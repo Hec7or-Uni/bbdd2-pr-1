@@ -36,4 +36,4 @@ services:
       ARCHIVE_LOGS: "false" # (default: true) Specify false to not configure log archiving (reduces start up time)
       TEXT_SEARCH: "false" # (default: false) Specify true to enable and configure text search
     volumes:
-      - ./db2/data/data:/database
+      - ./db2/data:/database
