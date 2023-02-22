@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  db2:
+    image: ibmcom/db2
+    restart: always
+    environment:
+      LICENSE: accept
+      DB2INST1_PASSWORD: db2inst1-pwd
+      DBNAME: db2inst1
+      PERSISTENT_HOME: "false" # (default: true) Specify to false if you are running Docker for Windows.
+      ARCHIVE_LOGS: "false" # (default: true) Specify false to not configure log archiving (reduces start up time)
+      TEXT_SEARCH: "false" # (default: false) Specify true to enable and configure text search
+    volumes:
+      - ./data:/database
