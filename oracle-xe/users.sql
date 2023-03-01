@@ -1,0 +1,7 @@
+CREATE USER developer IDENTIFIED BY 'PASSWORD';
+GRANT CONNECT TO developer;
+GRANT SELECT, INSERT, UPDATE ON books, users, rent TO developer;
+
+CREATE USER client IDENTIFIED BY 'PASSWORD';
+GRANT CONNECT TO client;
+GRANT SELECT ON books, users, rent TO client;
