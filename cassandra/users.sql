@@ -1,0 +1,19 @@
+CREATE ROLE developer WITH
+  PASSWORD = 'mypassword' AND
+  LOGIN = TRUE AND
+  ACCESS TO ALL DATACENTERS
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+
+GRANT SELECT, MODIFY, ALTER, DROP, UPDATE ON books, users, rent_by_book, rent_by_user TO developer;
+
+CREATE ROLE client WITH
+  PASSWORD = 'mypassword' AND
+  LOGIN = TRUE AND
+  ACCESS TO ALL DATACENTERS
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+
+GRANT SELECT ON books, rent, rent_by_user, rent_by_book TO client;
