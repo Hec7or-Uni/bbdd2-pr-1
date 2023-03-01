@@ -1,5 +1,6 @@
 CREATE ROLE developer WITH
   LOGIN
+  PASSWORD 'mypassword'
   NOSUPERUSER
   INHERIT
   NOCREATEDB
@@ -10,6 +11,7 @@ GRANT SELECT, INSERT, UPDATE ON books, users, rent TO developer;
 
 CREATE ROLE client WITH
   LOGIN
+  PASSWORD 'mypassword'
   NOSUPERUSER
   INHERIT
   NOCREATEDB
