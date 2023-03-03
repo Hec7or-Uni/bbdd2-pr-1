@@ -4,7 +4,12 @@ services:
   cassandra:
     image: cassandra:4.0
     restart: always
+    ports:
+      - 9042:9042
     environment:
       CASSANDRA_CLUSTER_NAME: "cassandra-cluster"
+      CASSANDRA_USER: "cassandra"
+      CASSANDRA_PASSWORD: "cassandra"
+      CASSANDRA_AUTHENTICATOR: "PasswordAuthenticator"
     volumes:
       - ./data:/var/lib/cassandra

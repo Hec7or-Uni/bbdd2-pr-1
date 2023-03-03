@@ -1,6 +1,8 @@
-CREATE TABLE books (
+CREATE KEYSPACE practice1 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+CREATE TABLE practice1.books (
    titulo           TEXT,
-   codigoInterno    UUID,
+   codigoInterno    TEXT,
    ISBN             TEXT,
    fechaPublicacion TIMESTAMP,
    autor            TEXT,
@@ -8,7 +10,7 @@ CREATE TABLE books (
    PRIMARY KEY (codigoInterno)
 );
 
-CREATE TABLE users (
+CREATE TABLE practice1.users (
    nombre           TEXT,
    fechaNacimiento TIMESTAMP,
    DNI              INT,
@@ -16,20 +18,20 @@ CREATE TABLE users (
    PRIMARY KEY (DNI)
 );
 
-CREATE TABLE rent_by_book (
+CREATE TABLE practice1.rent_by_book (
    fecha            TIMESTAMP,
    fechaDevolucion  TIMESTAMP,
-   books            UUID,
+   books            TEXT,
    users            INT,
    titulo           TEXT,
    autor            TEXT,
    PRIMARY KEY (books, users, fecha)
 );
 
-CREATE TABLE rent_by_user (
+CREATE TABLE practice1.rent_by_user (
    fecha            TIMESTAMP,
    fechaDevolucion  TIMESTAMP,
-   books            UUID,
+   books            TEXT,
    users            INT,
    nombre           TEXT,
    genero           TEXT,
