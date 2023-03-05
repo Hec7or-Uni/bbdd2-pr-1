@@ -13,7 +13,7 @@ CREATE TABLE practice1.books (
 CREATE TABLE practice1.users (
    nombre           TEXT,
    fechaNacimiento TIMESTAMP,
-   DNI              INT,
+   DNI              TEXT,
    genero           TEXT,
    PRIMARY KEY (DNI)
 );
@@ -22,7 +22,7 @@ CREATE TABLE practice1.rent_by_book (
    fecha            TIMESTAMP,
    fechaDevolucion  TIMESTAMP,
    books            TEXT,
-   users            INT,
+   users            TEXT,
    titulo           TEXT,
    autor            TEXT,
    PRIMARY KEY (books, users, fecha)
@@ -32,7 +32,7 @@ CREATE TABLE practice1.rent_by_user (
    fecha            TIMESTAMP,
    fechaDevolucion  TIMESTAMP,
    books            TEXT,
-   users            INT,
+   users            TEXT,
    nombre           TEXT,
    genero           TEXT,
    PRIMARY KEY (users, books, fecha)

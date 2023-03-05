@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   cassandra:
+    container_name: cassandra
     image: cassandra:4.0
     restart: always
     ports:
@@ -10,6 +11,6 @@ services:
       CASSANDRA_CLUSTER_NAME: "cassandra-cluster"
       CASSANDRA_USER: "cassandra"
       CASSANDRA_PASSWORD: "cassandra"
-      CASSANDRA_AUTHENTICATOR: "PasswordAuthenticator"
     volumes:
+      - ./etc/cassandra:/etc/cassandra
       - ./data:/var/lib/cassandra
