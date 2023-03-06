@@ -34,14 +34,6 @@ db2 create database bbdd2
 db2 connect to bbdd2 user db2inst1 using db2inst1
 ```
 
-```bash
-su - db2inst1
-```
-
-```bash
-db2start
-```
-
 ### Creación de las tablas
 En db2 a la hora de crear las tablas aunque un parametro sea
 clave primaria hay que indicar que es not null para que no 
