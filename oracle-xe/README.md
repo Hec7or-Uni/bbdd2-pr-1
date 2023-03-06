@@ -2,7 +2,30 @@
 
 ## Como empezar
 
-## Creación de las tablas
+### Puesta en marcha
+
+```yml
+version: '3.9'
+
+services:
+  oracle:
+    image: gvenzl/oracle-xe:21.3.0
+    restart: always
+    ports:
+      - 1521:1521
+    environment:
+      ORACLE_ALLOW_REMOTE: true
+      ORACLE_PASSWORD: oracle
+
+    volumes:
+      - ./data:/opt/oracle/oradata
+```
+
+```bash
+docker-compose up -d
+```
+
+### Creación de las tablas
 
 ```sql
 CREATE TABLE books (
@@ -36,7 +59,7 @@ CREATE TABLE rent (
 );
 ```
 
-## Permisos
+### Permisos
 
 ```sql
 CREATE USER developer IDENTIFIED BY password;
@@ -53,10 +76,6 @@ GRANT SELECT ON books TO client;
 GRANT SELECT ON users TO client;
 GRANT SELECT ON rent TO client;
 ```
-
-## Arquitectura de despliegue
-
---- 
 
 ## Scripts
 
