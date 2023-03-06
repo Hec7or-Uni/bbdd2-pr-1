@@ -9,7 +9,7 @@ CREATE TABLE books (
 
 CREATE TABLE users (
    nombre           VARCHAR(255)    NOT NULL,
-   fechaNaciemiento TIMESTAMP       NOT NULL,
+   fechaNacimiento TIMESTAMP       NOT NULL,
    DNI              VARCHAR(9)      PRIMARY KEY,
    genero           VARCHAR(6)      NOT NULL
 );
