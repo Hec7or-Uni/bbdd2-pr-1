@@ -4,8 +4,11 @@ services:
   oracle:
     image: gvenzl/oracle-xe:21.3.0
     restart: always
+    ports:
+      - 1521:1521
     environment:
       ORACLE_ALLOW_REMOTE: true
       ORACLE_PASSWORD: oracle
+
     volumes:
       - ./data:/opt/oracle/oradata
