@@ -10,15 +10,15 @@ CREATE TABLE books (
 CREATE TABLE users (
    nombre           VARCHAR(255)    NOT NULL,
    fechaNacimiento  TIMESTAMP       NOT NULL,
-   DNI              VARCHAR(9)     PRIMARY KEY,
+   DNI              VARCHAR(9)      PRIMARY KEY,
    genero           VARCHAR(6)      NOT NULL
 );
 
 CREATE TABLE rent (
-   fecha            TIMESTAMP       NOT NULL,
-   fechaDevolucion  TIMESTAMP       NOT NULL,
    books            VARCHAR(36),
    users            VARCHAR(9),
+   fecha            TIMESTAMP,
+   fechaDevolucion  TIMESTAMP       NOT NULL,
    PRIMARY KEY (books, users, fecha),
    FOREIGN KEY (books) REFERENCES books(codigoInterno),
    FOREIGN KEY (users) REFERENCES users(DNI)
