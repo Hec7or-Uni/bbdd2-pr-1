@@ -62,7 +62,7 @@ CREATE TABLE rent (
 ### Permisos
 
 ```sql
-CREATE USER developer IDENTIFIED BY password;
+CREATE USER developer IDENTIFIED BY mypassword;
 GRANT CONNECT TO developer;
 GRANT SELECT, INSERT, UPDATE ON books TO developer;
 GRANT SELECT, INSERT, UPDATE ON users TO developer;
@@ -70,7 +70,7 @@ GRANT SELECT, INSERT, UPDATE ON rent TO developer;
 ```
 
 ```sql
-CREATE USER client IDENTIFIED BY password;
+CREATE USER client IDENTIFIED BY mypassword;
 GRANT CONNECT TO client;
 GRANT SELECT ON books TO client;
 GRANT SELECT ON users TO client;
