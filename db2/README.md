@@ -11,19 +11,31 @@ services:
   db2:
     image: ibmcom/db2
     restart: always
+    privileged: true
+    ports:
+      - 50000:50000
     environment:
       LICENSE: accept
-      DB2INST1_PASSWORD: db2inst1-pwd
+      DB2INST1_PASSWORD: db2inst1
       DBNAME: db2inst1
       PERSISTENT_HOME: "false" # (default: true) Specify to false if you are running Docker for Windows.
       ARCHIVE_LOGS: "false" # (default: true) Specify false to not configure log archiving (reduces start up time)
       TEXT_SEARCH: "false" # (default: false) Specify true to enable and configure text search
     volumes:
       - ./data:/database
+
 ```
 
 ```bash
 docker-compose up -d
+```
+
+```bash
+su - db2inst1
+```
+
+```bash
+db2start
 ```
 
 ### Creación de las tablas
