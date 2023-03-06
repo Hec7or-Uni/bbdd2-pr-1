@@ -1,6 +1,6 @@
-CREATE 'books', {NAME => 'info'}
-CREATE 'users', {NAME => 'info'}
-CREATE 'rent', {NAME => 'info'}
+create 'books', 'titulo', 'ISBN', 'fechaPublicacion', 'autor', 'edicion'
+create 'users', 'nombre', 'fechaNacimiento', 'genero'
+create 'rent', 'fecha', 'fechaDevolucion', 'books', 'users'
 
 
 -- A continuación, se describen las columnas de cada tabla:

@@ -1,0 +1,5 @@
+grant 'developer1', 'RWX', 'books'
+grant 'developer1', 'RWX', 'users'
+grant 'developer1', 'RWX', 'rent'
+grant 'client1', 'R', 'books'
+grant 'client1', 'R', 'rent'

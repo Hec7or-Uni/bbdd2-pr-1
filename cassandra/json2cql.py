@@ -1,6 +1,5 @@
 import json
 
-
 # BOOKS
 # Leer los datos del archivo JSON
 with open('../seed/MOCK_DATA_BOOKS.json', 'r') as archivo:
