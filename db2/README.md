@@ -23,6 +23,7 @@ services:
       TEXT_SEARCH: "false" # (default: false) Specify true to enable and configure text search
     volumes:
       - ./data:/database
+
 ```
 
 ```bash
@@ -31,6 +32,14 @@ su - db2inst1
 db2start
 db2 create database bbdd2
 db2 connect to bbdd2 user db2inst1 using db2inst1
+```
+
+```bash
+su - db2inst1
+```
+
+```bash
+db2start
 ```
 
 ### Creación de las tablas
