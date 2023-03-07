@@ -1,15 +1,46 @@
 # Apache HBase
 
-## Como empezar
+## Cómo empezar
 
+### Puesta en marcha
+
+```yml
+version: '3.9'
+
+services:
+  hbase:
+    image: bde2020/hbase-standalone
+    restart: always
+    volumes:
+      - ./populate:/data/populate
+      - ./hbase-site.xml:/opt/hbase-1.2.6/conf/hbase-site.xml
+    container_name: hbase
 ```
-docker compose up -d
+
+```bash
+docker-compose up -d
 ```
 
-Después de hacer esto se puede acceder a la API REST en http://localhost:8085/
+### Configuración del sistema gestor y ejecución de la práctica
 
-## Operaciones básicas
+Ejecutar una terminal dentro del contenedor docker, con el siguiente comando:
 
-## Permisos
+```bash
+docker exec -it hbase /bin/bash
+```
 
-## Arquitectura de despliegue
+Una vez en el interior del contenedor, acceder al directorio /data/populate
+y ejecutar el script populate.sh:
+
+```bash
+cd /data/populate
+./populate.sh
+```
+
+Este script ejecuta todas las sentencias de creación de tablas, gestión de
+permisos de usuarios e inserción de datos.
+
+Todos los ficheros que realizan estas funciones, con la sintaxis apropiada
+para hbase, se encuentran tanto en el directorio /data/populate del contenedor
+docker, como en el subdirectorio populate de fuentes/hbase, donde se encuentra
+este fichero, README.md.
