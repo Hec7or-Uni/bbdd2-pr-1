@@ -3,6 +3,7 @@ version: '3.9'
 services:
   db2:
     image: ibmcom/db2
+    container_name: contenedor_db2
     restart: always
     privileged: true
     ports:

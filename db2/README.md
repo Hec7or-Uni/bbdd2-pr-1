@@ -10,6 +10,7 @@ version: '3.9'
 services:
   db2:
     image: ibmcom/db2
+    container_name: contenedor_db2
     restart: always
     privileged: true
     ports:
@@ -28,6 +29,7 @@ services:
 
 ```bash
 docker-compose up -d
+docker exec -it contenedor_db2 bash
 su - db2inst1
 db2start
 db2 create database bbdd2
@@ -88,4 +90,18 @@ GRANT CONNECT ON DATABASE TO client;
 GRANT SELECT ON books TO client;
 GRANT SELECT ON users TO client;
 GRANT SELECT ON rent TO client;
+```
+
+```sql
+GRANT DBADM ON DATABASE TO USER adminUsr -- Crear usuario admin con permisos de administrador
+```
+```sql
+GRANT CONNECT ON DATABASE TO USER developerUsr;
+```
+```sql
+GRANT CONNECT ON DATABASE TO USER clientUsr;
+```
+```sql
+GRANT developer TO developerUsr;
+GRANT client TO clientUsr
 ```
