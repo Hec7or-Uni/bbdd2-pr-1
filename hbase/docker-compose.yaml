@@ -2,8 +2,9 @@ version: '3.9'
 
 services:
   hbase:
-    image: dajobe/hbase
+    image: bde2020/hbase-standalone
     restart: always
     volumes:
       - ./populate:/data/populate
+      - ./hbase-site.xml:/opt/hbase-1.2.6/conf/hbase-site.xml
     container_name: hbase
